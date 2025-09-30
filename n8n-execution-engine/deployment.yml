@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: execution-engine
-          image: ikrambagban/n8n-engine
+          image: ikrambagban/n8n-engine:b32ed29002f7607cfe28e8d36a482682687dcbe4
   
