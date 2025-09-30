@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: execution-engine
-          image: ikrambagban/n8n-engine:b32ed29002f7607cfe28e8d36a482682687dcbe4
+          image: ikrambagban/n8n-engine:a29a91c49de2b6f3abc93ca2d71a91e7442254af
           volumeMounts:
           - name: secret
             mountPath: /usr/src/app/.env  
