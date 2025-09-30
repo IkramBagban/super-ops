@@ -5,6 +5,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx 
   rules:
   - host: n8n.proxlay.com
     http:
@@ -12,7 +13,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service:
-            name: n8n-web
+          web:
+            name: n8n-web-service
             port:
               number: 80

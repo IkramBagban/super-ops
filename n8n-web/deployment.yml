@@ -19,3 +19,14 @@ spec:
           image: ikrambagban/n8n-web:b32ed29002f7607cfe28e8d36a482682687dcbe4
           ports:
             - containerPort: 3000
+          volumeMounts:
+            - name: secret
+              mountPath: /app/.env
+              subPath: .env
+      volumes:
+          - name: secret
+            secret:
+              secretName: n8n-web-secret
+              items:
+                - key: .env
+                  path: .env
