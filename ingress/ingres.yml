@@ -5,9 +5,14 @@ metadata:
   labels:
     name: ingress-nginx
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - n8n.proxlay.com
+    secretName: n8n-proxlay-tls
   rules:
   - host: n8n.proxlay.com
     http:
