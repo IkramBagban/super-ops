@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n-engine-deployment
+  labels:
+    app: n8n-engine
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: n8n-engine
+  template:
+    metadata:
+      labels:
+        app: n8n-engine
+    spec:
+      containers:
+        - name: execution-engine
+          image: ikrambagban/n8n-engine
+  

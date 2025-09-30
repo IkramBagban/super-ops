@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n-web-deployment
+  labels:
+    app: n8n-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: n8n-web
+  template:
+    metadata:
+      labels:
+        app: n8n-web
+    spec:
+      containers:
+        - name: execution-web
+          image: ikrambagban/n8n-web
+          ports:
+            - containerPort: 3000
