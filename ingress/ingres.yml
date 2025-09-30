@@ -1,20 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: SuperIngress
+  name: ingres-nginx
+  labels:
+    name: ingress-nginx
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  ingressClassName: nginx 
+  ingressClassName: nginx
   rules:
   - host: n8n.proxlay.com
     http:
       paths:
-      - path: /
+      - path: / 
         pathType: Prefix
         backend:
-          web:
+          service:
             name: n8n-web-service
             port:
               number: 80

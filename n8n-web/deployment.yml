@@ -19,14 +19,6 @@ spec:
           image: ikrambagban/n8n-web:a29a91c49de2b6f3abc93ca2d71a91e7442254af
           ports:
             - containerPort: 3000
-          volumeMounts:
-            - name: secret
-              mountPath: /usr/src/app/.env #the usr/src/app is actually the main WORKDIR of dockerfile
-              subPath: .env
-      volumes:
-          - name: secret
-            secret:
-              secretName: n8n-web-secret
-              items:
-                - key: .env
-                  path: .env
+          envFrom:
+          - secretRef:
+              name: n8n-web-secret
