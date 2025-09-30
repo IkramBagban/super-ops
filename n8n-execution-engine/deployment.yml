@@ -19,7 +19,7 @@ spec:
           image: ikrambagban/n8n-engine:b32ed29002f7607cfe28e8d36a482682687dcbe4
           volumeMounts:
           - name: secret
-            mountPath: /app/.env  
+            mountPath: /usr/src/app/.env  
             subPath: .env
       volumes:
         - name: secret

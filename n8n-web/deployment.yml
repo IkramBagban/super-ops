@@ -15,13 +15,13 @@ spec:
         app: n8n-web
     spec:
       containers:
-        - name: execution-web
+        - name: n8n-web
           image: ikrambagban/n8n-web:b32ed29002f7607cfe28e8d36a482682687dcbe4
           ports:
             - containerPort: 3000
           volumeMounts:
             - name: secret
-              mountPath: /app/.env
+              mountPath: /usr/src/app/.env #the usr/src/app is actually the main WORKDIR of dockerfile
               subPath: .env
       volumes:
           - name: secret
