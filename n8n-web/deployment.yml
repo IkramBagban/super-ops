@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: execution-web
-          image: ikrambagban/n8n-web:da7aab30caf270cf71e0d936e499b536cc83a94e
+          image: ikrambagban/n8n-web:8fe65c980a6352ff89fa1a9ef073e48b37cd601c
           ports:
             - containerPort: 3000
           envFrom:
