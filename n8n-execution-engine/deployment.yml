@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: execution-engine
-          image: ikrambagban/n8n-engine:8fe65c980a6352ff89fa1a9ef073e48b37cd601c
+          image: ikrambagban/n8n-engine:99b3d834a74f2fb518aa5309d9e563f000e392bf
           envFrom:
           - secretRef:
               name: n8n-engine-secret
